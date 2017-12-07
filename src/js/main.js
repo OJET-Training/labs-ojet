@@ -50,7 +50,11 @@ require(['ojs/ojcore', 'knockout', 'jquery', './app', 'ojs/ojknockout', 'ojs/ojm
 
             function init() {
                 var appViewModel = new AppViewModel();
-                ko.applyBindings(appViewModel, document.getElementById("pageContent"));
+                oj.Router.sync().then(function() {
+                    ko.applyBindings(appViewModel, document.getElementById("pageContent"));
+                }, function(err) {
+                    oj.Logger.error(err.message);
+                });
             }
 
             // If running in a hybrid (e.g. Cordova) environment, we need to wait for the deviceready
