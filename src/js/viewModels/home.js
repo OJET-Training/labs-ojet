@@ -12,6 +12,10 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojinputtext',
         self.countriesDataSource = new oj.ArrayTableDataSource(self.countries, {
             idAttribute: 'id'
         });
+
+        self.add = function() {
+            self.countries.push({id: self.countryId(), name: self.countryName()});
+        }
     };
 
     return new ViewModel();
