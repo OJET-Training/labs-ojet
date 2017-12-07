@@ -10,7 +10,7 @@
             <div class="oj-form-layout">
                 <div class="oj-form">
                     <oj-label for="countryId">Country Id</oj-label>
-                    <oj-input-text id="countryId" value="{{countryId}}"></oj-input-text>
+                    <oj-input-number id="countryId" value="{{countryId}}" min="0" validators="[[validators]]"></oj-input-number>
 
                     <oj-label for="countryName">Country Name</oj-label>
                     <oj-input-text id="countryName" value="{{countryName}}"></oj-input-text>

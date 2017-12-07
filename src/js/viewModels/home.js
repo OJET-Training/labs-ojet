@@ -29,6 +29,18 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojinputtext',
             self.countryId(selectedCountry.id);
             self.countryName(selectedCountry.name);
         }
+
+        var idUniqueValidator = {
+            validate: function(val) {
+                for (var i = 0; i < self.countries().length; i++) {
+                    if (self.countries()[i].id === val) {
+                        throw new Error("id not unique");
+                    }
+                }
+                return true;
+            }
+        };
+        self.validators = [idUniqueValidator];
     };
 
     return new ViewModel();
