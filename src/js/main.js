@@ -44,6 +44,8 @@ requirejs.config({
 
 require(['ojs/ojcore', 'knockout', 'jquery', './app', 'ojs/ojknockout', 'ojs/ojmodule'],
     function(oj, ko, $, AppViewModel) {
+        oj.Logger.option("level",  oj.Logger.LEVEL_INFO);
+
         $(function() {
 
             function init() {
