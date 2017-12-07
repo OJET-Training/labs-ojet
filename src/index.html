@@ -31,7 +31,7 @@
             <div class="oj-flex-bar oj-web-applayout-max-width">
                 <h1><span class="fa fa-rocket"></span> OJET Labs<h1>
             </div>
-            <div role="navigation" class="oj-web-applayout-navbar">
+            <div role="navigation" class="oj-web-applayout-navbar oj-web-applayout-max-width">
                 <oj-navigation-list
                 data="[[navItems]]"
                 edge="top"
@@ -43,9 +43,7 @@
         </header>
 
         <div class="oj-web-applayout-content">
-            <div class="oj-flex oj-flex-items-pad oj-web-applayout-max-width">
-                <div data-bind="ojModule: {name: router.moduleConfig.name}"></div>
-            </div>
+            <div data-bind="ojModule: {name: router.moduleConfig.name}"></div>
         </div>
 
         <footer role="contentinfo" class="oj-web-applayout-footer">
