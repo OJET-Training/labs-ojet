@@ -1,4 +1,4 @@
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojrouter'], function(oj, ko, $) {
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojrouter', 'ojs/ojnavigationlist', 'ojs/ojarraytabledatasource'], function(oj, ko, $) {
 
     var AppViewModel = function() {
         var self = this;
@@ -17,6 +17,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojrouter'], f
         });
         oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
         self.router = router;
+
+        self.navItems = new oj.ArrayTableDataSource(self.router.states, {idAttribute: 'id'});
     };
 
     return AppViewModel;
