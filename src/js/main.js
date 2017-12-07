@@ -46,10 +46,13 @@ requirejs.config(
   }
 );
 
-require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout'],
-  function (oj, ko, $) {
+require(['ojs/ojcore', 'knockout', 'jquery', './app', 'ojs/ojknockout'],
+  function (oj, ko, $, AppViewModel) {
     $(function () {
+
       function init() {
+          var appViewModel = new AppViewModel();
+          ko.applyBindings(appViewModel, document.getElementById("pageContent"));
       }
 
       // If running in a hybrid (e.g. Cordova) environment, we need to wait for the deviceready
