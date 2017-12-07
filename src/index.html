@@ -20,6 +20,11 @@
 </head>
 
 <body class="oj-web-applayout-body">
+
+    <script type="text/html" id="navItemTemplate">
+        <li data-bind="attr: {id: id}"><a href="#" data-bind="text: label"></a></li>
+    </script>
+
     <div id="pageContent" class="oj-web-applayout-page">
 
         <header class="oj-web-applayout-header">
@@ -27,6 +32,13 @@
                 <h1><span class="fa fa-rocket"></span> OJET Labs<h1>
             </div>
             <div role="navigation" class="oj-web-applayout-navbar">
+                <oj-navigation-list
+                data="[[navItems]]"
+                edge="top"
+                class="oj-navigationlist-item-dividers oj-sm-condense"
+                item.renderer="{{oj.KnockoutTemplateUtils.getRenderer('navItemTemplate', true)}}"
+                selection="{{router.stateId}}">
+                </oj-navigation-list>
             </div>
         </header>
 
