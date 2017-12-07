@@ -22,6 +22,13 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojinputtext',
                 return c.id == country.id;
             });
         }
+
+        self.selected = function(evt) {
+            var selectedIndex = evt.detail.value[0].startIndex.row;
+            var selectedCountry = self.countries()[selectedIndex];
+            self.countryId(selectedCountry.id);
+            self.countryName(selectedCountry.name);
+        }
     };
 
     return new ViewModel();
