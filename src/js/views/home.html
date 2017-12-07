@@ -20,7 +20,11 @@
     </div>
     <div class="oj-flex-item oj-sm-12 oj-md-6">
         <div class="oj-panel">
-
+            <oj-table data="{{countriesDataSource}}"
+            summary="Countries"
+            columns='[{"headerText": "Country Id",   "field": "id"},
+                      {"headerText": "Country Name", "field": "name"}]'
+            ></table>
         </div>
     </div>
 </div>
