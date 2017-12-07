@@ -24,8 +24,18 @@
             <oj-table data="{{countriesDataSource}}"
             summary="Countries"
             columns='[{"headerText": "Country Id",   "field": "id"},
-                      {"headerText": "Country Name", "field": "name"}]'
-            ></table>
+                      {"headerText": "Country Name", "field": "name"},
+                      {"headerText": "Action"}]'
+            row-renderer="[[oj.KnockoutTemplateUtils.getRenderer('rowTemplate', true)]]"
+            ></oj-table>
         </div>
     </div>
 </div>
+
+<script type="text/html" id="rowTemplate">
+    <tr>
+        <td data-bind="text: id"></td>
+        <td data-bind="text: name"></td>
+        <td><a href="#" data-bind="click: $parent.remove"><span class="fa fa-trash"></span></a></td>
+    </tr>
+</script>

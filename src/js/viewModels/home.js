@@ -16,6 +16,12 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojinputtext',
         self.add = function() {
             self.countries.push({id: self.countryId(), name: self.countryName()});
         }
+
+        self.remove = function(country) {
+            self.countries.remove(function(c) {
+                return c.id == country.id;
+            });
+        }
     };
 
     return new ViewModel();
